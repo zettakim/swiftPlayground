@@ -1,7 +1,5 @@
 import UIKit
 
-var greeting = "Hello, playground"
-
 print("Hello, world!")
 print("Hello, world2!")
 
@@ -56,5 +54,43 @@ print(teamScore)
 var optionalString: String? = "Hello"
 print(optionalString == nil)
 
-var optionalName: String? = "Jhon Appleseed"
+var optionalName: String? = nil
 var greeting = "Hello!"
+if let name = optionalName {
+    greeting = "Hello, \(name)"
+} else {
+    greeting = "nil"
+}
+print(greeting)
+
+let nickname: String? = nil
+let fullName: String = "Zetta Kim"
+let informalGreeting = "Hi \(nickname ?? fullName)"
+print(informalGreeting)
+
+let vegetable = "red pepper"
+switch vegetable {
+case "celery":
+    print("Add some raisins and make ants on a log.")
+case "cucumber", "watercress":
+    print("That would make a good tea sandwich.")
+case let x where x.hasSuffix("pepper"):
+    print("Is it a spicy \(x)?")
+default:
+    print("Everything tastes good in soup.")
+}
+
+let interestingNumbers = [
+    "Prime": [2,3,5,7,11,13],
+    "Fibonacci": [1,1,2,3,5,8],
+    "Square": [1,4,9,14,25],
+]
+var largest = 0
+for (_, numbers) in interestingNumbers {
+    for number in numbers {
+        if number > largest {
+            largest = number
+        }
+    }
+}
+print(largest)
